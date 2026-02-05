@@ -215,7 +215,7 @@ const DecisionCard = () => {
               className="btn btn-outline-light reset-btn"
               onClick={handleReset}
             >
-              Stroke My Ego Again
+              Wanna try Again?
             </button>
           </div>
         )}
