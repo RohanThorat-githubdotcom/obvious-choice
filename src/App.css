@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+code {
+  font-family: 'JetBrains Mono', 'Courier New', Consolas, monospace;
+}
+
+.card-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    );
+  pointer-events: none;
+}
+
+.decision-card {
+  background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+  border-radius: 20px;
+  padding: 50px 40px;
+  /* max-width: 550px; */
+  width: 50vw;
+  box-shadow: 
+    0 0 40px rgba(255, 255, 255, 0.1),
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: visible;
+  min-height: 450px;
+}
+
+.card-content {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.card-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(0, 255, 157, 0.3));
+}
+
+.card-title {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 24px !important;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.3),
+    0 4px 10px rgba(255, 255, 255, 0.8);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.card-text {
+  color: #00ff9d;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 255, 157, 0.2);
+}
+
+.card-subtext {
+  color: #888888;
+  font-size: 0.95rem;
+  font-style: italic;
+  font-family: 'Courier New', monospace;
+  opacity: 0.8;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: 60px;
+}
+
+.reject-button-wrapper {
+  position: relative;
+  transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  padding: 80px;
+  margin: -80px;
+  /* Debug mode - uncomment to see the hover zone */
+  /* background: rgba(255, 0, 0, 0.1);
+  border: 1px dashed red; */
+}
+
+/* .reject-btn{
+  pointer-events: none !important;
+  cursor: default !important;
+} */
+
+.confirm-btn,
+.reject-btn {
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  min-width: 170px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.confirm-btn::before,
+.reject-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.confirm-btn:hover::before,
+.reject-btn:hover::before {
+  left: 100%;
+}
+
+.confirm-btn {
+  background: linear-gradient(135deg, #00ff9d, #00d67a);
+  color: #0a0a0a;
+  border: 2px solid #00ff9d;
+}
+
+.confirm-btn:hover {
+  background: linear-gradient(135deg, #00ffb3, #00ff9d);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 6px 25px rgba(0, 255, 157, 0.5),
+    0 0 30px rgba(0, 255, 157, 0.3);
+}
+
+.reject-btn {
+  background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
+  color: #888888;
+  border: 2px solid #444444;
+  position: relative;
+  pointer-events: auto;
+}
+
+.reject-btn:hover,
+.reject-btn:focus {
+  background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
+  border-color: #555555;
+  outline: none;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Success state */
+.success-content {
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.success-icon {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  animation: glitch 1s ease-in-out, float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(0, 255, 157, 0.5));
+}
+
+.success-title {
+  color: #00ff9d;
+  font-size: 2.3rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  text-shadow: 
+    0 0 20px rgba(0, 255, 157, 0.5),
+    0 4px 10px rgba(0, 0, 0, 0.8);
+  letter-spacing: -0.5px;
+}
+
+.success-text {
+  color: #cccccc;
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.reset-btn {
+  background: transparent;
+  border: 2px solid #00ff9d;
+  color: #00ff9d;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reset-btn:hover {
+  background: #00ff9d;
+  color: #0a0a0a;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 20px rgba(0, 255, 157, 0.4),
+    0 0 30px rgba(0, 255, 157, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+  .decision-card {
+    padding: 40px 30px;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .reject-button-wrapper {
+    padding: 60px; /* Reduced padding for mobile */
+    margin: -60px;
+  }
+
+  .confirm-btn,
+  .reject-btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
