@@ -1,4 +1,4 @@
-Impossible Choice - React Decision Card
+Obvious Choice - React Decision Card
 A fun, interactive React application featuring a decision card with an evasive "reject" button that moves away from the cursor, making it impossible to click!
 🎯 Features
 
