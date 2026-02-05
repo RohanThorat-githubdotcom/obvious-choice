@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/RohanThorat-githubdotcom/obvious-choice.git/static/css/main.51881b23.css",
+    "main.js": "/RohanThorat-githubdotcom/obvious-choice.git/static/js/main.ef3ce804.js",
+    "static/media/macbook.png": "/RohanThorat-githubdotcom/obvious-choice.git/static/media/macbook.f998386a9b330b8a1145.png",
+    "index.html": "/RohanThorat-githubdotcom/obvious-choice.git/index.html",
+    "main.51881b23.css.map": "/RohanThorat-githubdotcom/obvious-choice.git/static/css/main.51881b23.css.map",
+    "main.ef3ce804.js.map": "/RohanThorat-githubdotcom/obvious-choice.git/static/js/main.ef3ce804.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51881b23.css",
+    "static/js/main.ef3ce804.js"
+  ]
+}
